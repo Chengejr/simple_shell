@@ -8,6 +8,7 @@
 void execute_command(char *command)
 {
 	char *args[2];
+	char *token;
 	pid_t pid;
 	int status;
 
@@ -15,7 +16,8 @@ void execute_command(char *command)
 	command[strcspn(command, "\n")] = 0;
 
 	/* Set up the arguments for execve */
-	args[0] = command;
+	token = strtok(command, " ");
+	args[0] = token;
 	args[1] = NULL;
 
 	/* Fork a child process */
@@ -28,9 +30,9 @@ void execute_command(char *command)
 	else if (pid == 0)
 	{
 		/* Child process */
-		if (execve(command, args, NULL) == -1)
+		if (execve(args[0], args, NULL) == -1)
 		{
-			perror(command);
+			perror(args[0]);
 			exit(EXIT_FAILURE);
 		}
 	}
