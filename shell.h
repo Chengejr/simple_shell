@@ -13,7 +13,6 @@ extern char **environ;
 
 void handle_arguments(void);
 void parse_command(const char *command, char *args[]);
-void execute_command(char *args[]);
 void printPrompt();
 char* readInput();
 void printEnvironmentLine(const char *env);
