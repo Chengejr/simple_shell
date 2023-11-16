@@ -18,6 +18,6 @@ char* readInput();
 void printEnvironmentLine(const char *env);
 void printEnvironment();
 char** tokenizeInput(char *input);
-void executeCommand(char **args);
+void executeCommand(char *command);
 void changeDirectory(const char *path);
 #endif
