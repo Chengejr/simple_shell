@@ -5,7 +5,7 @@
  *
  * @command: The command to execute.
  */
-void executeCommand(char *command)
+void command(char *command)
 {
 	char *args[2];
 	char *token;

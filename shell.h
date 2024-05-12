@@ -19,5 +19,6 @@ void printEnvironmentLine(const char *env);
 void printEnvironment();
 char** tokenizeInput(char *input);
 void executeCommand(char *command);
+void command(char *command);
 void changeDirectory(const char *path);
 #endif
